@@ -87,7 +87,6 @@ module ActiveCampaign
       def show_contacts(filters: {}, orders: {}, **params)
         params[:filters] = filters if filters.any?
         params[:orders]  = orders  if orders.any?
-
         get('contacts', params)
       end
 
