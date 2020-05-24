@@ -118,10 +118,12 @@ module ActiveCampaign
       end
 
       def contact_list_subscribe(list_id, contact_id)
+        binding.pry
         post('contactLists', list_id: list_id, contact: contact_id, status: "1")
       end
 
       def contact_list_unsubscribe(list_id, contact_id)
+        binding.bry
         post('contactLists', list_id: list_id, contact: contact_id, status: "2")
       end
 
