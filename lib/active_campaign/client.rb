@@ -10,12 +10,21 @@ module ActiveCampaign
     include API
     include TransformHash
 
-    endpoint :accounts
-    endpoint :contacts
     endpoint :account_contacts
+    endpoint :accounts
     endpoint :addresses
+    endpoint :contacts
+    endpoint :contact_tags
+    endpoint :deals
+    endpoint :deal_custom_field_meta
+    endpoint :deal_custom_field_data
+    endpoint :deal_stages
+    endpoint :fields
+    endpoint :field_values
     endpoint :groups
     endpoint :lists
+    endpoint :pipelines
+    endpoint :tags
     endpoint :templates
     endpoint :users
 
@@ -44,6 +53,12 @@ module ActiveCampaign
     def post(*args)
       safe_http_call do
         connection.post(*args)
+      end
+    end
+
+    def patch(*args)
+      safe_http_call do
+        connection.patch(*args)
       end
     end
 

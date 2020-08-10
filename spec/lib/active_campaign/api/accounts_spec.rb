@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-
 RSpec.describe ActiveCampaign::API::Accounts, :vcr do
   let(:client) { ActiveCampaign.client }
 
@@ -10,7 +8,7 @@ RSpec.describe ActiveCampaign::API::Accounts, :vcr do
 
     include_context 'with existing account'
 
-    it 'returns a account hash' do
+    it 'returns an account hash' do
       expect(response).to include_json(
         account: {
           id: account_id,
@@ -32,7 +30,7 @@ RSpec.describe ActiveCampaign::API::Accounts, :vcr do
       client.delete_account(response[:account][:id])
     end
 
-    it 'returns a account hash' do
+    it 'returns an account hash' do
       expect(response).to include_json(
         account: {
           name: account_name,
@@ -56,7 +54,7 @@ RSpec.describe ActiveCampaign::API::Accounts, :vcr do
 
     include_context 'with existing account'
 
-    it 'returns a account hash' do
+    it 'returns an account hash' do
       expect(response).to include_json(
         account: {
           id: account_id,
@@ -74,7 +72,7 @@ RSpec.describe ActiveCampaign::API::Accounts, :vcr do
 
     include_context 'with existing account'
 
-    it 'returns a account hash' do
+    it 'returns an accounts array' do
       expect(response).to include_json(
         accounts: [{
           id: account_id,
